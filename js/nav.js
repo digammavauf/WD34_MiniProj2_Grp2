@@ -8,7 +8,7 @@ export let navBar = {
     },
     generate: function() {
         let nav = document.createElement("nav");
-        nav.classList.add("navbar", "navbar-expand-lg", "navabar-relaxtint", "bg-relaxtint", "my-2", "my-lg-0", "mr-sm-0", "my-sm-0", "px-3");
+        nav.classList.add("navbar", "navbar-expand-lg", "navabar-light", "bg-light", "my-2", "my-lg-0", "mr-sm-0", "my-sm-0", "px-3");
         let brand = document.createElement("a");
         brand.classList.add("navbar-brand", "mb-0", "h1");
         brand.textContent = this.brand;

@@ -1,0 +1,20 @@
+@import "../node_modules/bootstrap/scss/functions.scss";
+@import "../node_modules/bootstrap/scss/variables.scss";
+
+$psychotherapy-theme-colors: (
+    "power": #FE0000,
+    "positivity": #F36523,
+    "playfulness": #FFFF00,
+    "health": #00A650,
+    "reliable": #0054A5,
+    "royalty": #652D90,
+    "stimupurehue": #0054A5,
+    "relaxshade": #00407E,
+    "relaxtone": #285481,
+    "relaxtint": #DCEDFD
+);
+
+$theme-colors: map-merge($psychotherapy-theme-colors, $theme-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+

@@ -6,6 +6,7 @@ export let menu = [
 ];
 
 export function generateNavBar() {
+    console.log("generateNavBar-start");
     let nav = document.createElement("nav");
     nav.classList.add("navbar", "navbar-expand-sm", "navbar-dark", "bg-stimupurehue", "text-relaxtint", "sticky-top");
     let container = document.createElement("div");
@@ -21,15 +22,15 @@ export function generateNavBar() {
     toggler.classList.add("navbar-toggler");
     toggler.type = "button";
     toggler.setAttribute("data-bs-toggle", "collapse");
-    toggler.setAttribute("data-bs-target", "#tclnavbar");
+    toggler.setAttribute("data-bs-target", "#tlcnavbar");
     let togglerIcon = document.createElement("span");
     togglerIcon.classList.add("navbar-toggler-icon");
     toggler.appendChild(togglerIcon);
     nav.appendChild(toggler);
     
-    let tclnavbar = document.createElement("div");
-    tclnavbar.classList.add("collapse", "navbar-collapse");
-    tclnavbar.id = "tclnavbar";
+    let tlcnavbar = document.createElement("div");
+    tlcnavbar.classList.add("collapse", "navbar-collapse");
+    tlcnavbar.id = "tlcnavbar";
     let navList = document.createElement("ul");
     navList.classList.add("navbar-nav", "me-auto");
     for(let item of menu) {
@@ -48,31 +49,33 @@ export function generateNavBar() {
         navItem.appendChild(navLink);
         navList.appendChild(navItem);
     }   
-    tclnavbar.appendChild(navList);
+    tlcnavbar.appendChild(navList);
 
     let navForm = document.createElement("form");
     navForm.classList.add("d-flex");
-    let cartLink = document.createElement("a");
-    cartLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue");
-    cartLink.href = "cart.html";
-    let cartLinkIcon = document.createElement("span");
-    cartLinkIcon.classList.add("fa-solid", "fa-cart-shopping", "pe-1");
-    cartLink.appendChild(cartLinkIcon);
-    let cartLinkText = document.createElement("span");
-    cartLinkText.classList.add("fw-semibold");
-    cartLinkText.id = "cartItemCount";
-    cartLinkText.innerText = "0";
-    cartLink.appendChild(cartLinkText);
-    navForm.appendChild(cartLink);
-    tclnavbar.appendChild(navForm);
+    let bookingLink = document.createElement("a");
+    bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue");
+    bookingLink.href = "booking.html";
+    let bookingLinkIcon = document.createElement("span");
+    bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "pe-1");
+    bookingLink.appendChild(bookingLinkIcon);
+    let bookingLinkText = document.createElement("span");
+    bookingLinkText.classList.add("fw-semibold");
+    bookingLinkText.id = "bookingItemCount";
+    bookingLinkText.innerText = "0";
+    bookingLink.appendChild(bookingLinkText);
+    navForm.appendChild(bookingLink);
+    tlcnavbar.appendChild(navForm);
 
-    container.appendChild(tclnavbar);
+    container.appendChild(tlcnavbar);
 
     nav.appendChild(container);
     document.body.prepend(nav);
+    console.log("generateNavBar-stop");
 }
 
 export function generateTop() {
+    console.log("generateTop-start");
     let top = document.createElement("div");
     top.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-stimupurehue");
     let brand = document.createElement("span");
@@ -80,4 +83,5 @@ export function generateTop() {
     brand.innerText = "TLC";
     top.appendChild(brand);
     document.body.prepend(top);
+    console.log("generateTop-stop");
 }

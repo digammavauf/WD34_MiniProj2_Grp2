@@ -14,7 +14,7 @@ export function generateNavBar() {
     let brand = document.createElement("a");
     brand.classList.add("navbar-brand");
     brand.href = "index.html";
-    brand.innerHTML = "TCL";
+    brand.innerHTML = "TLC";
     container.appendChild(brand);
 
     let toggler = document.createElement("button");
@@ -77,7 +77,7 @@ export function generateTop() {
     top.classList.add("container-fluid", "text-center", "stimupurehue");
     let brand = document.createElement("span");
     brand.classList.add("fs-4", "fw-semibold");
-    brand.innerText = "TCL";
+    brand.innerText = "TLC";
     top.appendChild(brand);
     document.body.prepend(top);
 }

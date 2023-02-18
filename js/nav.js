@@ -7,12 +7,12 @@ export let menu = [
 
 export function generateNavBar() {
     let nav = document.createElement("nav");
-    nav.classList.add("navbar", "navbar-expand-sm", "navbar-dark", "bg-dark", "sticky-top");
+    nav.classList.add("navbar", "navbar-expand-sm", "navbar-dark", "bg-stimupurehue", "text-relaxtint", "sticky-top");
     let container = document.createElement("div");
     container.classList.add("container-fluid");
     
     let brand = document.createElement("a");
-    brand.classList.add("navbar-brand");
+    brand.classList.add("navbar-brand", "fw-semibold", "text-relaxtint");
     brand.href = "index.html";
     brand.innerHTML = "TLC";
     container.appendChild(brand);
@@ -53,7 +53,7 @@ export function generateNavBar() {
     let navForm = document.createElement("form");
     navForm.classList.add("d-flex");
     let cartLink = document.createElement("a");
-    cartLink.classList.add("btn", "bg-light");
+    cartLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue");
     cartLink.href = "cart.html";
     let cartLinkIcon = document.createElement("span");
     cartLinkIcon.classList.add("fa-solid", "fa-cart-shopping", "pe-1");
@@ -74,7 +74,7 @@ export function generateNavBar() {
 
 export function generateTop() {
     let top = document.createElement("div");
-    top.classList.add("container-fluid", "text-center", "stimupurehue");
+    top.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-stimupurehue");
     let brand = document.createElement("span");
     brand.classList.add("fs-4", "fw-semibold");
     brand.innerText = "TLC";

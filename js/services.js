@@ -8,7 +8,7 @@ export let catalog = [
         servicePrice: 2490
     },
     {
-        serviceSKU: "PTFUS",
+        serviceSKU: "PTFS",
         serviceImage: "https://picsum.photos/seed/2/300/300",
         serviceName: "Psychiatry Follow Up Session",
         serviceVariant: "30-minute session",
@@ -106,7 +106,7 @@ export function generateBooking() {
     console.log("generateBooking-start");
     let servicesHTML = `
                 <caption>List of services</caption>
-                <thead class="bg-stimupurehue">
+                <thead class="bg-stimupurehue text-relaxtint">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Particulars</th>
@@ -140,12 +140,12 @@ export function generateBooking() {
 `;
     if(amountDue > 0) {
         servicesHTML += `
-                <tfoot class="bg-stimupurehue">
+                <tfoot class="bg-stimupurehue text-relaxtint">
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>Amount Due</td>
-                        <td>${amountDue}</td>
-                        <td><button class="btn btn-success"><span class="fa-solid fa-calendar-check"></span> Checkout</button></td>
+                        <td scope="col" class="fw-bold">&nbsp;</td>
+                        <td scope="col" class="fw-bold">Amount Due</td>
+                        <td scope="col" class="fw-bold">${amountDue}</td>
+                        <td scope="col" class="fw-bold"><button class="btn btn-success"><span class="fa-solid fa-calendar-check"></span> Checkout</button></td>
                     </tr>
                 </tfoot>
 `;

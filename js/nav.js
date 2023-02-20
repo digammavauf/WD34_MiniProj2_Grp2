@@ -1,4 +1,4 @@
-export let menu = [
+let menu = [
     {label: "Home", url: "index.html", title: "Home page", icon: "fa-home"},
     {label: "Services", url: "services.html", title: "Services page", icon: "fa-gear"},
     {label: "About Us", url: "about.html", title: "About us page", icon: "fa-circle-question"},
@@ -6,7 +6,7 @@ export let menu = [
 ];
 
 export function generateNavBar() {
-    console.log("generateNavBar-start");
+    console.log("generateNavBar-init");
     let nav = document.createElement("nav");
     nav.classList.add("navbar", "navbar-expand-sm", "navbar-dark", "bg-stimupurehue", "text-relaxtint", "sticky-top");
     let container = document.createElement("div");
@@ -71,11 +71,11 @@ export function generateNavBar() {
 
     nav.appendChild(container);
     document.body.prepend(nav);
-    console.log("generateNavBar-stop");
+    console.log("generateNavBar-complete");
 }
 
 export function generateTop() {
-    console.log("generateTop-start");
+    console.log("generateTop-init");
     let top = document.createElement("div");
     top.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-stimupurehue");
     let brand = document.createElement("span");
@@ -83,5 +83,5 @@ export function generateTop() {
     brand.innerText = "TLC";
     top.appendChild(brand);
     document.body.prepend(top);
-    console.log("generateTop-stop");
+    console.log("generateTop-complete");
 }

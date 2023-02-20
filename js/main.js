@@ -5,7 +5,8 @@ generateTop();
 /* END CREATE AND GENERATE NAVBAR */
 
 /* BEGIN CREATE AND GENERATE CATALOG */
-import { generateCatalog, generateBooking } from "./services.js";
+import { loadResource, generateCatalog, generateBooking } from "./services.js";
+loadResource("../data/services.json");
 generateCatalog();
 generateBooking();
 /* END CREATE AND GENERATE CATALOG */

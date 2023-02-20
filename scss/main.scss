@@ -1,0 +1,33 @@
+// functions to manipulate colors, SVGs, calc, etc
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// default variable overrides
+
+$psychiatry-colors: (
+    power: #FE0000,
+    positivity: #F36523,
+    playfulness: #FFFF00,
+    health: #00A650,
+    reliable: #0054A5,
+    royalty: #652D90,
+    stimupurehue: #0054A5,
+    relaxshade: #00407E,
+    relaxtone: #285481,
+    relaxtint: #DCEDFD
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $psychiatry-colors);
+
+// remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// optional Bootstrap components
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";

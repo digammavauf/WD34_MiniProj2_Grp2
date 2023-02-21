@@ -3,6 +3,8 @@
 <h4>A. Accomplished:</h4>
 <ol>
   <li>Micro Update: Updated service image-tops using OpenAI's chat and DeepAI's text2img utilities</li>
+  <li>Micro Update: Added Readme.md to github repo - for historical accomplishment reporting</li>
+  <li>Micro Update: Added effective filter functionality to catalog of services using DIV.innerHTML.toUpperCase().indexOf(FILTERSTRING.toUpperCase()) and adding/removing "d-none" to classlist of DIV when unmatched/matched is detected</li>
 </ol>
 <h2>As of Feb. 20, 2023</h2>
 <h4>A. Accomplished:</h4>

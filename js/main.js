@@ -1,7 +1,9 @@
-import { generateNavBar, generateTop } from "./nav.js";
+import { loadMenuResource, generateNavBar, generateHeader, generateFooter } from "./nav.js";
 /* BEGIN CREATE AND GENERATE NAVBAR */
+loadMenuResource("../data/menu.json");
 generateNavBar();
-generateTop();
+generateHeader();
+generateFooter();
 /* END CREATE AND GENERATE NAVBAR */
 
 /* BEGIN CREATE AND GENERATE CATALOG */

@@ -64,23 +64,70 @@ export function generateNavBar() {
             tlcnavbar.appendChild(navList);
                 let navForm = document.createElement("form");
                 navForm.classList.add("d-flex");
-                    let bookingLink = document.createElement("a");
-                    bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue");
-                    bookingLink.href = "booking.html";
-                        let bookingLinkIcon = document.createElement("span");
-                        bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "pe-1");
-                    bookingLink.appendChild(bookingLinkIcon);
-                        let bookingLinkText = document.createElement("span");
-                        bookingLinkText.classList.add("fw-semibold");
-                        bookingLinkText.id = "bookingItemCount";
-                        bookingLinkText.innerText = "0";
-                    bookingLink.appendChild(bookingLinkText);
-                navForm.appendChild(bookingLink);
+                    let bookingGroup = document.createElement("div");
+                    bookingGroup.classList.add("input-group");
+                    
+                    /* FILTER IS ONLY AVAILABLE IF #catalog IS PRESENT */
+                    if(document.querySelector("#catalog") != null) {
+                        let bookingFilter = document.createElement("input");
+                        bookingFilter.classList.add("form-control");
+                        bookingFilter.id = "filter";
+                        bookingFilter.type = "text";
+                        bookingFilter.placeholder = "Filter Services";
+                    bookingGroup.appendChild(bookingFilter);
+                        let bookingFilterButton = document.createElement("button");
+                        bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-stimupurehue", "text-relaxtint");
+                        bookingFilterButton.type = "button";
+                            let bookingFilterButtonIcon = document.createElement("span");
+                            bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter", "pe-1");
+                        bookingFilterButton.appendChild(bookingFilterButtonIcon);
+                                let bookingFilterButtonLabel = document.createElement("span");
+                                bookingFilterButtonLabel.classList.add("fw-semibold");
+                                bookingFilterButtonLabel.id = "bookingFilter";
+                                bookingFilterButtonLabel.innerText = "0";
+                        bookingFilterButton.appendChild(bookingFilterButtonLabel);
+                    bookingGroup.appendChild(bookingFilterButton);
+                        bookingFilterButton.addEventListener("click", filterCatalog);
+                        bookingFilter.addEventListener("keyup", filterCatalog);
+                    }
+
+                        let bookingLink = document.createElement("a");
+                        bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue");
+                        bookingLink.href = "booking.html";
+                            let bookingLinkIcon = document.createElement("span");
+                            bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "pe-1");
+                        bookingLink.appendChild(bookingLinkIcon);
+                            let bookingLinkText = document.createElement("span");
+                            bookingLinkText.classList.add("fw-semibold");
+                            bookingLinkText.id = "bookingItemCount";
+                            bookingLinkText.innerText = "0";
+                        bookingLink.appendChild(bookingLinkText);
+                    bookingGroup.appendChild(bookingLink);
+                navForm.appendChild(bookingGroup);
             tlcnavbar.appendChild(navForm);
             container.appendChild(tlcnavbar);
         nav.appendChild(container);
     document.body.prepend(nav);
     console.log("generateNavBar-complete");
+}
+
+function filterCatalog(event) {
+    let filterCount = 0;
+    document.querySelector("#catalog").childNodes.forEach(function(child) {
+        if(child.nodeName == "DIV") {
+            let what = document.querySelector("#filter").value;
+            let text = String(child.innerHTML);
+            let found = (text.toUpperCase().indexOf(what.toUpperCase()) >= 0);
+            console.log(`Finding ${what} from ${text}`);
+            if(found) {
+                filterCount++;
+                child.classList.remove("d-none");
+            } else {
+                child.classList.add("d-none");
+            }
+            document.querySelector("#bookingFilter").innerText = filterCount;
+        }
+    });  
 }
 
 export function generateHeader() {

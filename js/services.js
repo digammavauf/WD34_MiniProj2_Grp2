@@ -129,6 +129,10 @@ export function generateBooking() {
         return;
     };
     document.querySelector("#booking").innerHTML =  servicesHTML;
+    if(!document.querySelector("#btn-removefrombooking")) {
+        console.log("generateBooking-interrupt: #btn-removefrombooking not found");
+        return;
+    };
     document.querySelectorAll(".btn-removefrombooking").forEach(function(btn) {
         btn.addEventListener("click", function(event) {
             let item = 0;

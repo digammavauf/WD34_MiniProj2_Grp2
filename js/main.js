@@ -7,8 +7,10 @@ generateFooter();
 /* END CREATE AND GENERATE NAVBAR */
 
 /* BEGIN CREATE AND GENERATE CATALOG */
-import { loadResource, generateCatalog, generateBooking } from "./services.js";
+import { loadResource, generateCatalog, generateBooking, getDue, pay } from "./services.js";
 loadResource("data/services.json");
 generateCatalog();
 generateBooking();
+getDue();
+pay();
 /* END CREATE AND GENERATE CATALOG */

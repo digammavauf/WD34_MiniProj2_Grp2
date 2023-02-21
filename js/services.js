@@ -31,17 +31,17 @@ export function generateCatalog() {
                 <div class="col-md-3 col-sm-6 col-8 mx-auto">
                     <div class="card h-100">
                         <img class="card-img-top" src="${item.serviceImage}">
-                        <div class="card-header">
+                        <div class="card-header bg-relaxtint">
                             <h4 class="card-title">${item.serviceName} <span class="fs-5 text-stimupurehue">SKU: ${item.serviceSKU}</span></h4>
                             <h6 class="card-subtitle text-muted">${item.serviceVariant}</h6>
                         </div>
                         <div class="card-body">
                             <div class="card-text">${item.serviceDescription}</div>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer bg-relaxtint">
                             <div class="row d-flex flex-row flex-wrap pe-1 justify-content-between align-items-stretch">
                                 <div class="fw-bold col-md-6 col-sm-6 col-12 my-auto">&#x20B1; ${Number(item.servicePrice).toLocaleString("en-US")}</div>
-                                <button class="btn btn-stimupurehue btn-addtobooking col-md-6 col-sm-6 col-12 my-auto" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-plus"></span> Book Now</span></button>
+                                <button class="btn btn-reliable zoom-on-hover btn-addtobooking col-md-6 col-sm-6 col-12 my-auto" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-plus fs-4"></span><div>Book</div></span></button>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ export function generateCatalog() {
     document.querySelectorAll(".btn-addtobooking").forEach(function(btn) {
         btn.addEventListener("click", function(event) {
             let item = 0;
-            if(event.target.nodeName == "SPAN") {
+            if(event.target.nodeName == "SPAN" || event.target.nodeName == "DIV") {
                 item = Number(event.target.parent.getAttribute("data-tlc-item"));
             } else {
                 item = Number(event.target.getAttribute("data-tlc-item"));
@@ -99,7 +99,7 @@ export function generateBooking() {
                             <div>${item.serviceDescription}</div>
                         </td>
                         <td>&#x20B1; ${Number(item.servicePrice).toLocaleString("en-US")}</td>
-                        <td><button class="btn btn-removefrombooking btn-danger" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-minus fs-4"></span><div>Remove<div></button></td>
+                        <td><button class="btn btn-royalty zoom-on-hover btn-removefrombooking" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-minus fs-4"></span><div>Remove<div></button></td>
                     </tr>
 `;
         amountDue += item.servicePrice;
@@ -114,7 +114,7 @@ export function generateBooking() {
                         <td scope="col" class="fw-bold">&nbsp;</td>
                         <td scope="col" class="fw-bold">Amount Due</td>
                         <td scope="col" class="fw-bold">&#x20B1; ${Number(amountDue).toLocaleString("en-US")}</td>
-                        <td scope="col" class="fw-bold"><button class="btn btn-success"><span class="fa-solid fa-calendar-check fs-4"></span><div>Confirm</div></button></td>
+                        <td scope="col" class="fw-bold"><button type="button" class="btn btn-health zoom-on-hover" id="btn-confirmbooking" data-tlc-due="${amountDue}"><span class="fa-solid fa-calendar-check fs-4"></span><div>Confirm</div></button></td>
                     </tr>
                 </tfoot>
 `;
@@ -132,7 +132,7 @@ export function generateBooking() {
     document.querySelectorAll(".btn-removefrombooking").forEach(function(btn) {
         btn.addEventListener("click", function(event) {
             let item = 0;
-            if(event.target.nodeName == "SPAN") {
+            if(event.target.nodeName == "SPAN" || event.target.nodeName == "DIV") {
                 item = Number(event.target.parent.getAttribute("data-tlc-item"));
             } else {
                 item = Number(event.target.getAttribute("data-tlc-item"));
@@ -140,10 +140,55 @@ export function generateBooking() {
             removeFromBooking(item);
         });
     });
+    document.querySelector("#btn-confirmbooking").addEventListener("click", function(event) {
+        let due = 0;
+        if(event.target.nodeName == "SPAN" || event.target.nodeName == "DIV") {
+            due = Number(event.target.parent.getAttribute("data-tlc-due"));
+        } else {
+            due = Number(event.target.getAttribute("data-tlc-due"));
+        } 
+        if(due > 0) {
+            sessionStorage.setItem("due", due);
+            location.href = "confirm.html";
+        }
+    });
     console.log("generateBooking-complete");
 }
 
-export function addToBooking(itemIndex) {
+export function getDue() {
+    console.log("getDue-init");
+    if(!document.querySelector("#due")) {
+        console.log("getDue-interrupt: #due not found");
+        return;
+    };
+    let due = 0;
+    if(sessionStorage.getItem("due") == null){
+        console.log("getDue-interrupt: session[due] does not exist");
+        return;
+    }
+    due = sessionStorage.getItem("due");
+    document.querySelector("#due").innerHTML = `&#x20B1; ${Number(due).toLocaleString("en-US")}`;
+    console.log("getDue-complete");
+}
+
+export function pay() {
+    console.log("pay-init");
+    if(!document.querySelector("#paymentSucceeded")) {
+        console.log("pay-interrupt: #paymentSucceeded not found");
+        return;
+    };
+    let items = booking.splice(0, booking.length);
+    items.forEach(function(item) {
+        catalog.push(item);
+    });
+    sessionStorage.setItem("catalog", JSON.stringify(catalog));
+    sessionStorage.setItem("booking", JSON.stringify(booking));
+    generateCatalog();
+    generateBooking();
+    console.log("pay-complete");
+}
+
+function addToBooking(itemIndex) {
     console.log("addToBooking-init");
     let item = catalog.splice(itemIndex, 1);
     booking.push(item[0]);
@@ -154,7 +199,7 @@ export function addToBooking(itemIndex) {
     console.log("addToBooking-complete");
 }
 
-export function removeFromBooking(itemIndex) {
+function removeFromBooking(itemIndex) {
     console.log("removeFromBooking-init");
     let item = booking.splice(itemIndex, 1);
     catalog.push(item[0]);
@@ -164,4 +209,3 @@ export function removeFromBooking(itemIndex) {
     generateBooking();
     console.log("removeFromBooking-complete");
 }
-

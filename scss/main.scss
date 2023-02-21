@@ -31,3 +31,8 @@ $theme-colors: map-merge($theme-colors, $psychiatry-colors);
 @import "../node_modules/bootstrap/scss/images";
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
+
+.zoom-on-hover:hover {
+    transform: scale(1.1);
+    transition: 200ms;
+}

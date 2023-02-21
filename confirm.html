@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Confirm</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/f433770b08.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.min.css">
+    </head>
+    <body>
+
+        <section class="bg-relaxtint text-stimupurehue text-center p-2">
+            <h1>Confirm Booking</h1>
+        </section>
+
+        <div class="container my-3">
+            <div class="row d-flex flex-row justify-content-around align-items-stretch">
+                <div class="position-relative zoom-on-hover col-md-4 col-sm-8 col-10 shadow-lg p-3 m-3 bg-positivity bg-opacity-25 rounded text-center">
+                    <p><span class="fw-bold fs-3">Pay Nothing</span> as an <span class="fw-semibold fs-4">Anonymous Client</span> and wait for a <span class="fw-semibold fs-4">Volunter Clinician</span> to attend your concern once someone becomes available.</p>
+                    <div><a data-bs-toggle="modal" data-bs-target="#freeService" href="javascript:void();" title="Free Service" class="stretched-link text-decoration-none">Mobile Number is Required</a> for your assigned volunteer to get in touch with you.</div>
+                </div>    
+                <div class="position-relative zoom-on-hover col-md-4 col-sm-8 col-10 shadow-lg p-3 m-3 bg-health bg-opacity-25 rounded text-center">
+                    <p><span class="fw-bold fs-3">Pay <span id="due">Due</span></span> as a <span class="fw-semibold fs-4">Registered Client</span> and have a <span class="fw-semibold fs-4">Professional Clinician</span> to contact you within 12 to 36 hours and finalize a face-to-face or online consultation.</p>
+                    <div><a data-bs-toggle="modal" data-bs-target="#paidService" href="javascript:void();" title="Paid Service" class="stretched-link text-decoration-none">Name, Address, and Mobile Number is Required</a> for your assigned professional to be able to create your patient profile.</div>
+                </div>    
+            </div>
+        </div>
+
+        <div class="modal fade" id="freeService" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <form class="needs-validation" action="payment.html">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="freeServiceLabel">Free Service Agreement</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to provide a single and only datum that can identify you as a person. This is enough for us to contact you when a clinician becomes available for you. We will only keep your information until the conclusion of our services to you as our client.</p>
+                            <div class="input-group">
+                                <label class="input-group-text" for="mobileno">Mobile No.</label>
+                                <input class="form-control" type="text" name="mobileno" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-relaxtint zoom-on-hover mx-auto" data-bs-dismiss="modal">Cancel Booking</button>
+                            <button type="submit" class="btn btn-positivity btn-complete-booking zoom-on-hover mx-auto">Complete Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="paidService" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <form class="needs-validation" action="payment.html">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="paidServiceLabel">Paid Service Agreement</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to provide three data that can identify you as a person. This will be enough for us to properly address you and assign you a clinician that is near your location. We will keep your information as part of our mandatory patient profiling so that records will be available anytime when you need it.</p>
+                            <div class="input-group mb-2">
+                                <label class="input-group-text" for="name">Name</label>
+                                <input class="form-control" type="text" name="name" required>
+                            </div>
+                            <div class="input-group mb-2">
+                                <label class="input-group-text" for="address">Address</label>
+                                <input class="form-control" type="text" name="address" required>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-group-text" for="mobileno">Mobile No.</label>
+                                <input class="form-control" type="text" name="mobileno" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-relaxtint zoom-on-hover mx-auto" data-bs-dismiss="modal">Cancel Booking</button>
+                            <button type="submit" class="btn btn-health btn-complete-booking zoom-on-hover mx-auto">Complete Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/f433770b08.js" crossorigin="anonymous"></script>
+    <script type="module" src="js/main.js"></script>
+</html>

@@ -47,7 +47,7 @@ export function generateNavBar() {
                 navList.classList.add("navbar-nav", "me-auto", "me-3");
                 for(let item of menu) {
                     let navItem = document.createElement("li");
-                    navItem.classList.add("nav-item");
+                    navItem.classList.add("nav-item", "zoom-on-hover");
                     let navLink = document.createElement("a");
                     navLink.classList.add("nav-link", "text-center");
                     navLink.href = item.url;
@@ -77,7 +77,7 @@ export function generateNavBar() {
                         bookingFilter.addEventListener("keyup", filterCatalog);
                     bookingGroup.appendChild(bookingFilter);
                         let bookingFilterButton = document.createElement("button");
-                        bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-stimupurehue", "text-relaxtint");
+                        bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-stimupurehue", "text-relaxtint", "zoom-on-hover", "mx-2");
                         bookingFilterButton.type = "button";
                             let bookingFilterButtonIcon = document.createElement("span");
                             bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter-circle-xmark", "fs-4", "pe-1");
@@ -92,7 +92,7 @@ export function generateNavBar() {
                     }
 
                         let bookingLink = document.createElement("a");
-                        bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue", "text-center");
+                        bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue", "text-center", "zoom-on-hover");
                         bookingLink.href = "booking.html";
                             let bookingLinkIcon = document.createElement("span");
                             bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "fs-4");

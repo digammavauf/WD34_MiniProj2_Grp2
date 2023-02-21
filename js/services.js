@@ -28,7 +28,7 @@ export function generateCatalog() {
     let itemIndex = 0;
     for(let item of catalog) {
         servicesHTML += `
-                <div class="col-md-3 col-sm-6 col-12">
+                <div class="col-md-3 col-sm-6 col-8 mx-auto">
                     <div class="card h-100">
                         <img class="card-img-top" src="${item.serviceImage}">
                         <div class="card-header">
@@ -39,9 +39,9 @@ export function generateCatalog() {
                             <div class="card-text">${item.serviceDescription}</div>
                         </div>
                         <div class="card-footer">
-                            <div class="row d-flex flex-row flex-wrap pe-1 justify-content-between">
-                                <div class="fs-4 fw-bold col-md-6 col-sm-6 col-12">&#x20B1; ${item.servicePrice}</div>
-                                <button class="btn btn-addtobooking bg-info col-md-6 col-sm-6 col-12" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-plus"></span> Book Now</span></button>
+                            <div class="row d-flex flex-row flex-wrap pe-1 justify-content-between align-items-stretch">
+                                <div class="fw-bold col-md-6 col-sm-6 col-12 my-auto">&#x20B1; ${Number(item.servicePrice).toLocaleString("en-US")}</div>
+                                <button class="btn btn-stimupurehue btn-addtobooking col-md-6 col-sm-6 col-12 my-auto" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-plus"></span> Book Now</span></button>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ export function generateBooking() {
                             <span class="text-muted">${item.serviceVariant}</span>
                             <div>${item.serviceDescription}</div>
                         </td>
-                        <td>${item.servicePrice}</td>
+                        <td>&#x20B1; ${Number(item.servicePrice).toLocaleString("en-US")}</td>
                         <td><button class="btn btn-removefrombooking btn-danger" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-minus fs-4"></span><div>Remove<div></button></td>
                     </tr>
 `;
@@ -113,7 +113,7 @@ export function generateBooking() {
                     <tr>
                         <td scope="col" class="fw-bold">&nbsp;</td>
                         <td scope="col" class="fw-bold">Amount Due</td>
-                        <td scope="col" class="fw-bold">${amountDue}</td>
+                        <td scope="col" class="fw-bold">&#x20B1; ${Number(amountDue).toLocaleString("en-US")}</td>
                         <td scope="col" class="fw-bold"><button class="btn btn-success"><span class="fa-solid fa-calendar-check fs-4"></span><div>Confirm</div></button></td>
                     </tr>
                 </tfoot>

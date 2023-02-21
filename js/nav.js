@@ -36,7 +36,7 @@ export function generateNavBar() {
             let container = document.createElement("div");
             container.classList.add("container-fluid");
                 let brand = document.createElement("a");
-                brand.classList.add("navbar-brand", "fw-semibold", "text-relaxtint");
+                brand.classList.add("navbar-brand", "fw-semibold", "text-relaxtint", "d-none", "d-sm-block");
                 brand.href = "index.html";
                 brand.innerHTML = "TLC";
             container.appendChild(brand);
@@ -44,19 +44,19 @@ export function generateNavBar() {
             tlcnavbar.classList.add("collapse", "navbar-collapse");
             tlcnavbar.id = "tlcnavbar";
                 let navList = document.createElement("ul");
-                navList.classList.add("navbar-nav", "me-auto");
+                navList.classList.add("navbar-nav", "me-auto", "me-3");
                 for(let item of menu) {
                     let navItem = document.createElement("li");
                     navItem.classList.add("nav-item");
                     let navLink = document.createElement("a");
-                    navLink.classList.add("nav-link");
+                    navLink.classList.add("nav-link", "text-center");
                     navLink.href = item.url;
                     navLink.title = item.title;
                         let navLinkIcon = document.createElement("span");
-                        navLinkIcon.classList.add("pe-1", "fa-solid", item.icon);
+                        navLinkIcon.classList.add("pe-1", "fa-solid", item.icon, "fs-4");
                     navLink.appendChild(navLinkIcon);
-                    let navLinkLabel = document.createElement("span");
-                    navLinkLabel.innerText = item.label;
+                        let navLinkLabel = document.createElement("div");
+                        navLinkLabel.innerText = item.label;
                     navLink.appendChild(navLinkLabel);
                     navItem.appendChild(navLink);
                     navList.appendChild(navItem);
@@ -79,7 +79,7 @@ export function generateNavBar() {
                         bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-stimupurehue", "text-relaxtint");
                         bookingFilterButton.type = "button";
                             let bookingFilterButtonIcon = document.createElement("span");
-                            bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter", "pe-1");
+                            bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter", "fs-4", "pe-1");
                         bookingFilterButton.appendChild(bookingFilterButtonIcon);
                                 let bookingFilterButtonLabel = document.createElement("span");
                                 bookingFilterButtonLabel.classList.add("fw-semibold");
@@ -92,12 +92,12 @@ export function generateNavBar() {
                     }
 
                         let bookingLink = document.createElement("a");
-                        bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue");
+                        bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue", "text-center");
                         bookingLink.href = "booking.html";
                             let bookingLinkIcon = document.createElement("span");
-                            bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "pe-1");
+                            bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "fs-4");
                         bookingLink.appendChild(bookingLinkIcon);
-                            let bookingLinkText = document.createElement("span");
+                            let bookingLinkText = document.createElement("div");
                             bookingLinkText.classList.add("fw-semibold");
                             bookingLinkText.id = "bookingItemCount";
                             bookingLinkText.innerText = "0";
@@ -133,7 +133,7 @@ function filterCatalog(event) {
 export function generateHeader() {
     console.log("generateHeader-init");
     let header = document.createElement("div");
-    header.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-stimupurehue");
+    header.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-stimupurehue", "d-sm-none", "d-block");
         let brand = document.createElement("span");
         brand.classList.add("fs-4", "fw-semibold");
         brand.innerText = "TLC";

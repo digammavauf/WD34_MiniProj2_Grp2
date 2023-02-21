@@ -93,12 +93,13 @@ export function generateBooking() {
                     <tr>
                         <th scope="row">${itemIndex+1}</th>
                         <td>
-                            <span class="bg-stimupurehue text-relaxtint p-1 rounded">SKU: ${item.serviceSKU}</span>
+                            <span class="bg-stimupurehue text-relaxtint px-2 py-1 rounded">SKU: ${item.serviceSKU}</span>
                             <span class="fs-5 fw-semibold">${item.serviceName}</span>
                             <span class="text-muted">${item.serviceVariant}</span>
+                            <div>${item.serviceDescription}</div>
                         </td>
                         <td>${item.servicePrice}</td>
-                        <td><button class="btn btn-removefrombooking btn-danger" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-minus"></span> Remove</button></td>
+                        <td><button class="btn btn-removefrombooking btn-danger" data-tlc-item="${itemIndex++}"><span class="fa-solid fa-calendar-minus fs-4"></span><div>Remove<div></button></td>
                     </tr>
 `;
         amountDue += item.servicePrice;
@@ -113,7 +114,7 @@ export function generateBooking() {
                         <td scope="col" class="fw-bold">&nbsp;</td>
                         <td scope="col" class="fw-bold">Amount Due</td>
                         <td scope="col" class="fw-bold">${amountDue}</td>
-                        <td scope="col" class="fw-bold"><button class="btn btn-success"><span class="fa-solid fa-calendar-check"></span> Checkout</button></td>
+                        <td scope="col" class="fw-bold"><button class="btn btn-success"><span class="fa-solid fa-calendar-check fs-4"></span><div>Confirm</div></button></td>
                     </tr>
                 </tfoot>
 `;

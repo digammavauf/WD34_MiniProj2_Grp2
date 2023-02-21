@@ -74,12 +74,13 @@ export function generateNavBar() {
                         bookingFilter.id = "filter";
                         bookingFilter.type = "text";
                         bookingFilter.placeholder = "Filter Services";
+                        bookingFilter.addEventListener("keyup", filterCatalog);
                     bookingGroup.appendChild(bookingFilter);
                         let bookingFilterButton = document.createElement("button");
                         bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-stimupurehue", "text-relaxtint");
                         bookingFilterButton.type = "button";
                             let bookingFilterButtonIcon = document.createElement("span");
-                            bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter", "fs-4", "pe-1");
+                            bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter-circle-xmark", "fs-4", "pe-1");
                         bookingFilterButton.appendChild(bookingFilterButtonIcon);
                                 let bookingFilterButtonLabel = document.createElement("span");
                                 bookingFilterButtonLabel.classList.add("fw-semibold");
@@ -87,8 +88,7 @@ export function generateNavBar() {
                                 bookingFilterButtonLabel.innerText = "0";
                         bookingFilterButton.appendChild(bookingFilterButtonLabel);
                     bookingGroup.appendChild(bookingFilterButton);
-                        bookingFilterButton.addEventListener("click", filterCatalog);
-                        bookingFilter.addEventListener("keyup", filterCatalog);
+                        bookingFilterButton.addEventListener("click", unfilterCatalog);
                     }
 
                         let bookingLink = document.createElement("a");
@@ -112,6 +112,7 @@ export function generateNavBar() {
 }
 
 function filterCatalog(event) {
+    console.log("filterCatalog-init");
     let filterCount = 0;
     document.querySelector("#catalog").childNodes.forEach(function(child) {
         if(child.nodeName == "DIV") {
@@ -127,7 +128,20 @@ function filterCatalog(event) {
             }
             document.querySelector("#bookingFilter").innerText = filterCount;
         }
-    });  
+    });
+    console.log("filterCatalog-complete");
+}
+
+function unfilterCatalog(event) {
+    console.log("unfilterCatalog-init");
+    document.querySelector("#catalog").childNodes.forEach(function(child) {
+        if(child.nodeName == "DIV") {
+            child.classList.remove("d-none");
+            document.querySelector("#filter").value  = "";
+            document.querySelector("#bookingFilter").innerText = "0";
+        }
+    });
+    console.log("unfilterCatalog-complete");
 }
 
 export function generateHeader() {

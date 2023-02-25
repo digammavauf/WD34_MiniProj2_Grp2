@@ -168,6 +168,12 @@ export function getDue() {
     }
     due = sessionStorage.getItem("due");
     document.querySelector("#due").innerHTML = `&#x20B1; ${Number(due).toLocaleString("en-US")}`;
+    document.querySelector("#avail4Free").addEventListener("click", function(event) {
+        document.querySelector("#freeService").modal("show");
+    });
+    document.querySelector("#avail4Fee").addEventListener("click", function(event) {
+        document.querySelector("#paidService").modal("show");
+    });    
     console.log("getDue-complete");
 }
 

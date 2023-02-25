@@ -2,5 +2,6 @@
 {"label":"Home","url":"index.html","title":"Home page","icon":"fa-home"},
 {"label":"Services","url":"services.html","title":"Services page","icon":"fa-hand-holding-hand"},
 {"label":"About Us","url":"about.html","title":"About us page","icon":"fa-circle-info"},
-{"label":"Contact Us","url":"contact.html","title":"Contact us page","icon":"fa-phone-flip"}
+{"label":"Contact Us","url":"contact.html","title":"Contact us page","icon":"fa-phone-flip"},
+{"label":"Join Us","url":"join.html","title":"Join us page","icon":"fa-user-plus"}
 ]

@@ -23,7 +23,7 @@ export function generateNavBar() {
     }
     menu = JSON.parse(sessionStorage.getItem("menu"));
         let nav = document.createElement("nav");
-        nav.classList.add("navbar", "navbar-expand-sm", "navbar-dark", "bg-stimupurehue", "text-relaxtint", "sticky-top");
+        nav.classList.add("navbar", "navbar-expand-sm", "navbar-dark", "bg-dominic", "text-relaxtint", "sticky-top");
             let toggler = document.createElement("button");
             toggler.classList.add("navbar-toggler");
             toggler.type = "button";
@@ -77,7 +77,7 @@ export function generateNavBar() {
                         bookingFilter.addEventListener("keyup", filterCatalog);
                     bookingGroup.appendChild(bookingFilter);
                         let bookingFilterButton = document.createElement("button");
-                        bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-stimupurehue", "text-relaxtint", "zoom-on-hover", "mx-2");
+                        bookingFilterButton.classList.add("btn", "btn-outline-relaxtint", "bg-dominic", "text-relaxtint", "zoom-on-hover", "mx-2");
                         bookingFilterButton.type = "button";
                             let bookingFilterButtonIcon = document.createElement("span");
                             bookingFilterButtonIcon.classList.add("fa-solid", "fa-filter-circle-xmark", "fs-4", "pe-1");
@@ -92,7 +92,7 @@ export function generateNavBar() {
                     }
 
                         let bookingLink = document.createElement("a");
-                        bookingLink.classList.add("btn", "bg-relaxtint", "text-stimupurehue", "text-center", "zoom-on-hover");
+                        bookingLink.classList.add("btn", "bg-relaxtint", "text-dominic", "text-center", "zoom-on-hover");
                         bookingLink.href = "booking.html";
                             let bookingLinkIcon = document.createElement("span");
                             bookingLinkIcon.classList.add("fa-solid", "fa-calendar", "fs-4");
@@ -147,7 +147,7 @@ function unfilterCatalog(event) {
 export function generateHeader() {
     console.log("generateHeader-init");
     let header = document.createElement("div");
-    header.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-stimupurehue", "d-sm-none", "d-block");
+    header.classList.add("container-fluid", "text-center", "bg-relaxtint", "text-dominic", "d-sm-none", "d-block");
         let brand = document.createElement("span");
         brand.classList.add("fs-4", "fw-semibold");
         brand.innerText = "TLC";
@@ -159,7 +159,7 @@ export function generateHeader() {
 export function generateFooter() {
     console.log("generateFooter-init");
     let footer = document.createElement("div");
-    footer.classList.add("container-fluid", "text-center", "bg-stimupurehue", "text-relaxtint");
+    footer.classList.add("container-fluid", "text-center", "bg-dominic", "text-relaxtint");
         let copyright = document.createElement("span");
         copyright.classList.add("fs-6");
         copyright.innerHTML = "Copyright &copy; 2023. TLC. All rights reserved.";

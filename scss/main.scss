@@ -15,8 +15,18 @@ $psychiatry-colors: (
     relaxshade: #00407E,
     relaxtone: #285481,
     relaxtint: #DCEDFD,
-    dominic: #2B323C
+    dominic-dark: #2b323c8c,
+    dominic-light: #EAEAEA,
+    dominic-btn: #285481
 );
+
+$font-family-sans-serif: "Arial", sans-serif;
+$font-family-monospace: monospace;
+$body-bg: #EAEAEA;
+$link-color: #FFF;
+$link-hover-color: #84D9EE;
+$link-transition: all 0.5s ease;
+$link-decoration: none;
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $psychiatry-colors);
@@ -33,7 +43,51 @@ $theme-colors: map-merge($theme-colors, $psychiatry-colors);
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 600px;
+/*     overflow-x: hidden;
+    position: relative;
+ */}
+
 .zoom-on-hover:hover {
     transform: scale(1.1);
     transition: 200ms;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 300;
+    font-family: "Rubik", sans-serif;
+}
+
+.nav-link::after {
+    position: absolute;
+    content: "";
+    height: 0.1rem;
+    background-color: white;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: all 0.5s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    transform: scale(1, 1);
+}
+
+#toggler:checked ~ #togglerLabel span:before {
+    content: "\f00d";
 }

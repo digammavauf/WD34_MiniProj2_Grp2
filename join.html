@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index_queries.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniProject 2</title>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/1a1fd08177.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav sticky">
+        <div class="nav-h1">
+          <h2 class="nav-text">TLC</h2>
+          <div class="nav-ul">
+            <input type="checkbox" id="click" />
+            <label for="click" class="menu-btn">
+              <i class="fa-solid fa-bars"></i>
+            </label>
+            <ul>
+              <li class="nav-link"><a href="index.html">Home</a></li>
+              <li class="nav-link"><a href="services.html">Services</a></li>
+              <li class="nav-link"><a href="about.html">About Us</a></li>
+              <li class="nav-link"><a href="contact.html">Contact Us</a></li>
+              <button class="btnNav" onclick="window.location.href='join.html'">Join Us</button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-comment">
+      <h1>Join Us</h1>
+      <h2>Become one of Our <span class="auto-type"></span></h2>
+    </div>
+
+    <main class="container alloy-2">
+      <div class="alloy">
+        <h2 class="main-text">
+          Joining our team of mental health care professionals can be an incredibly fulfilling and rewarding experience. You can make a positive impact on people's lives, learn and grow, experience job satisfaction, build meaningful relationships, and have access to exciting career opportunities.
+        </h2>
+        <button class="btnMain main">Join Now</button>
+        <h2 class="list-caption">5 Reasons Why</h2>
+        <ol class="numbered-list">
+            <li>Make a positive impact on people's lives: Mental health care professionals work with individuals who are experiencing a range of emotional and psychological difficulties. By joining our mental health care team, you can play a vital role in helping people overcome their challenges and improve their quality of life.</li>
+            <li>Learn and grow: Working in our team of mental health care professionals can provide you with the opportunity to learn from experienced colleagues and grow your own knowledge and skills. You may also have the chance to attend training sessions, workshops, and conferences to stay up-to-date with the latest developments in the field.</li>
+            <li>Job satisfaction: Helping others can be an incredibly rewarding experience, and mental health care professionals often report high levels of job satisfaction. By joining our team of mental health care professionals, you can become part of a community of like-minded individuals who are passionate about helping others.</li>
+            <li>Build meaningful relationships: Working in our team of mental health care professionals can provide you with the opportunity to build meaningful relationships with your colleagues and the individuals you serve. You may develop close bonds with your team members, as you work together to provide the best possible care for your clients.</li>
+            <li>Career opportunities: Mental health care is a growing field, and there is an increasing demand for qualified professionals. By joining our team of mental health care professionals, you can gain valuable experience and skills that can help you advance your career.</li>
+        </ol>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      let typed = new Typed(".auto-type", {
+        strings: ["Volunteer Specialists", "Paid Professionals", "Staff", "Developers"],
+        typedSpeed: 250,
+        backSpeed: 250,
+        loop: true,
+      });
+    </script>
+  </body>
+  <script src="js/index.js"></script>
+</html>

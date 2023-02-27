@@ -1,117 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/index_queries.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MiniProject 2</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TLC Online</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/index_queries.css" />
+	</head>
+	<body>
+		<header class="header">
+			<nav class="nav sticky">
+				<div class="nav-h1">
+					<h2 class="nav-text">TLC Online</h2>
+					<div class="nav-ul">
+						<input type="checkbox" id="click" />
+						<label for="click" class="menu-btn">
+							<i class="fa-solid fa-bars"></i>
+						</label>
+						<ul>
+							<li class="nav-link"><a href="index.html">Home</a></li>
+							<li class="nav-link"><a href="services.html">Services</a></li>
+							<li class="nav-link"><a href="about.html">About Us</a></li>
+							<li class="nav-link"><a href="contact.html">Contact Us</a></li>
+							<button class="btnNav" onclick="window.location.href='join.html'">Join Us</button>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
 
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/1a1fd08177.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav sticky">
-        <div class="nav-h1">
-          <h2 class="nav-text">TLC</h2>
-          <div class="nav-ul">
-            <input type="checkbox" id="click" />
-            <label for="click" class="menu-btn">
-              <i class="fa-solid fa-bars"></i>
-            </label>
-            <ul>
-              <li class="nav-link"><a href="index.html">Home</a></li>
-              <li class="nav-link"><a href="services.html">Services</a></li>
-              <li class="nav-link"><a href="about.html">About Us</a></li>
-              <li class="nav-link"><a href="contact.html">Contact Us</a></li>
-              <button class="btnNav">Write a post</button>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+		<div class="container-comment">
+			<h1>Post and Get Help</h1>
+			<h2>I'm <span class="auto-type"></span></h2>
+		</div>
 
-    <div class="container-comment">
-      <h1>Post and Get Help</h1>
-      <h2>I'm <span class="auto-type"></span></h2>
-    </div>
+		<main class="container alloy-2">
+			<div class="alloy">
+			<h2 class="main-text">
+			TLC Online is an online portal for both mental health patients and mental health specialists. This platform provides resources, information, and support to people who are struggling with mental health issues. We offer a wide range of services, including online counseling, peer support forums, self-help tools, educational resources, and access to mental health professionals.
+			</h2>
+			<button class="btnMain main">Learn More</button>
+			<button class="btnMain showPost">Post your Issue</button>
+			</div>
+		</main>
+		
+		<section class="postFormSection">
+			<form class="cta">
+				<i class="back fa-regular fa-circle-xmark"></i>
+				<p class="formText">Your name:</p>
+				<input type="text" class="formNameInput" placeholder="Your alias" required/>
+				<p class="formText">Your message:</p>
+				<textarea name="" id="" maxlength="400" class="formtextArea" required></textarea>
+				<button class="formBtnSubmit">Share</button>
+			</form>
+		</section>
 
-    <main class="container alloy-2">
-      <div class="alloy">
-        <h2 class="main-text">
-          An online freedom wall where we can anonymously <br />
-          share our secret.
-        </h2>
-        <button class="btnMain main">Learn More</button>
-        <button class="btnMain showPost">Post Secret</button>
-      </div>
-    </main>
-    <section class="postFormSection">
-      <form class="cta">
-        <i class="back fa-regular fa-circle-xmark"></i>
-        <p class="formText">Your name:</p>
-        <input
-          type="text"
-          class="formNameInput"
-          placeholder="Your alias"
-          required
-        />
-        <p class="formText">Your message:</p>
-        <textarea
-          name=""
-          id=""
-          maxlength="400"
-          class="formtextArea"
-          required
-        ></textarea>
-        <button class="formBtnSubmit">Share</button>
-      </form>
-    </section>
+		<section class="container-post">
+			<ul class="allPostContainer grid grid-4-cols">
+				<li class="postContainer">
+					<div class="postMessage">
+						<div class="postHeader">
+							<div class="clientIcon">
+								<i class="clientIcons fa-solid fa-user"></i>
+							</div>
+							<div class="clientInfo">
+								<h2>Dominic</h2>
+							</div>
+						</div>
+						<div class="clientPost">
+							<div class="clientMessage">
+								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, mollitia! Ipsa, exercitationem? Esse, iste dicta. Perferendis facere, eligendi voluptates sequi distinctio sed iste. Officiis quibusdam aspernatur accusantium, ea sequi amet?</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
 
-    <section class="container-post">
-      <ul class="allPostContainer grid grid-4-cols">
-        <!-- Start -->
-        <!-- <li class="postContainer">
-          <div class="postMessage">
-            <div class="postHeader">
-              <div class="clientIcon">
-                <i class="clientIcons fa-solid fa-user"></i>
-              </div>
-              <div class="clientInfo">
-                <h2>Dominic</h2>
-              </div>
-            </div>
-            <div class="clientPost">
-              <div class="clientMessage">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Exercitationem, mollitia! Ipsa, exercitationem? Esse, iste
-                  dicta. Perferendis facere, eligendi voluptates sequi
-                  distinctio sed iste. Officiis quibusdam aspernatur
-                  accusantium, ea sequi amet?\
-                </p>
-              </div>
-            </div>
-          </div>
-        </li> -->
-        <!--End-->
-      </ul>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      let typed = new Typed(".auto-type", {
-        strings: ["Happy", "Sad", "Angry", "Scared", "In Pain"],
-        typedSpeed: 250,
-        backSpeed: 250,
-        loop: true,
-      });
-    </script>
-  </body>
-  <script src="js/index.js"></script>
+	</body>
+	<script src="https://kit.fontawesome.com/1a1fd08177.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	<script>
+		let typed = new Typed(".auto-type", {
+			strings: ["Happy", "Sad", "Angry", "Scared", "In Pain"],
+			typedSpeed: 250,
+			backSpeed: 250,
+			loop: true,
+		});
+	</script>
+	<script src="js/index.js"></script>
 </html>

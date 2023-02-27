@@ -3,5 +3,5 @@
 {"label":"Services","url":"services.html","title":"Services page","icon":"fa-hand-holding-hand"},
 {"label":"About Us","url":"about.html","title":"About us page","icon":"fa-circle-info"},
 {"label":"Contact Us","url":"contact.html","title":"Contact us page","icon":"fa-phone-flip"},
-{"label":"Join Us","url":"join.html","title":"Join us page","icon":"fa-user-plus"}
+{"label":"Join Us","url":"register.html","title":"Join us page","icon":"fa-user-plus"}
 ]

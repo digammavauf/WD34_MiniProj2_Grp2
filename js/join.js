@@ -9,41 +9,6 @@ let formtextArea = document.querySelector(".formtextArea");
 let formNameInput = document.querySelector(".formNameInput");
 let cta = document.querySelector(".cta");
 
-let post = [];
-
-function renderAllpost() {
-  allPostContainer.innerHTML = "";
-
-  if (post.length === 0) {
-    allPostContainer.innerHTML = `<div class = "no-post"><p>No post yet</p></div>`;
-  }
-
-  if (post.length >= 1) {
-    post.map(function (item, index) {
-      const html = `<li class="postContainer" data-id="${item.id}">
-        <div class="postMessage">
-          <div class="postHeader">
-            <div class="clientIcon">
-              <i class="clientIcons fa-solid fa-user"></i>
-            </div>
-            <div class="clientInfo">
-              <h2>${item.name}</h2>
-            </div>
-          </div>
-          <div class="clientPost">
-            <div class="clientMessage">
-              <p>${item.message}</p>
-            </div>
-          </div>
-        </div>
-      </li>`;
-      allPostContainer.insertAdjacentHTML("afterbegin", html);
-      // allPostContainer.innerHTML += html;
-    });
-  }
-}
-renderAllpost();
-
 function showCta() {
   postForm.classList.add("showPost");
 }
@@ -74,13 +39,7 @@ function shareFn(e) {
   formtextArea.value = "";
 }
 
+
 back.addEventListener("click", backCta);
 showPost.addEventListener("click", showCta);
 cta.addEventListener("submit", shareFn);
-
-let redirectToServices = document.querySelector(".redirectToServices");
-
-function redirectToSvcs() {
-  window.location.href = "services.html";
-}
-redirectToServices.addEventListener("click", redirectToSvcs);

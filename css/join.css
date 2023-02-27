@@ -73,8 +73,6 @@ nav {
 	list-style: none;
 }
 
-a.form-link:link,
-a.form-link:visited,
 .nav a:link,
 .nav a:visited {
 	color: #fff;
@@ -82,8 +80,6 @@ a.form-link:visited,
 	transition: all 0.5s ease;
 	font-size: 1rem;
 }
-a.form-link:active,
-a.form-link:hover,
 .nav a:active,
 .nav a:hover {
 	color: #84d9ee;
@@ -356,4 +352,25 @@ a.form-link:hover,
 	font-family: sans-serif;
 	font-weight: 300;
 	text-transform: uppercase;
+}
+
+h2.list-caption {
+    margin: 20px 50px 20px 50px;
+    font-size: 2rem;
+}
+
+ol.numbered-list {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 20px 50px 20px 50px;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+ol.numbered-list li {
+    padding: 5px 10px;
+}
+
+.btnBig {
+    font-size: 3rem;
 }

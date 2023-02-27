@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact Us</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/f433770b08.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.min.css">
+    </head>
+    <body>
+
+        <section class="bg-dominic-header text-light d-flex flex-column justify-content-center align-items-center pb-5">
+            <h1 class="fw-bold">Contact Us</h1>
+            <h2>You can <span class="auto-type"></span></h2>
+        </section>
+
+        <div class="container shadow-lg p-3 m-5 bg-light rounded">
+            Do you have a question, concern, idea, feedback, or problem? If you still need assistance, please fill out the form below and we'd be happy to help!
+        </div>
+
+        <div class="container shadow-lg p-3 m-5 bg-light rounded">
+            <h5>Type of Contact:</h5>
+                <input type="radio" id="type1" name="contacttype" value="type1">
+                <label for="type1">I am a registered client and I need support.</label><br>
+                <input type="radio" id="type2" name="contacttype" value="type2">
+                <label for="type2">I am a current TLC therapist and I need support.</label><br>
+                <input type="radio" id="type3" name="contacttype" value="type3">
+                <label for="type3">I am a therapist interested in joining or a current applicant.</label><br>
+                <input type="radio" id="type4" name="contacttype" value="type4">
+                <label for="type4">I have a question about the service.</label><br>
+                <input type="radio" id="type5" name="contacttype" value="type5">
+                <label for="type5">I have a billing related question.</label><br>
+                <input type="radio" id="type6" name="contacttype" value="type6">
+                <label for="type6">I have a business-related inquiry.</label><br>
+                <input type="radio" id="type7" name="contacttype" value="type7">
+                <label for="type7">I'm interested in TLC for my organization.</label>
+            <br><br>
+
+            <form id="survey-form">
+                <div class="form-group">
+                  <label id="name-label" for="name">*Name:
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label id="email-label" for="email">*Email:
+                    <input type="email" id="email" placeholder="Enter your Email" required>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label id="number-label" for="number">*Age:
+                    <input type="number" id="number" min="10" max="99" placeholder="Age">
+                  </label>
+                </div>
+                
+                <div class="form-group">
+                  <p>Message:</p>
+                  <textarea id="suggestions" name="suggestions" placeholder="Write your message..."></textarea>
+                </div>
+                <div class="form-group">
+                  <input id="submit" type="submit" value="Submit">
+                </div>
+              </form>
+        </div>
+        
+        <div class="container shadow-lg p-3 m-5 bg-light rounded">
+            <h5>TLC Psychiatrists Contact Info:</h5>
+            <br>
+            <p>Email:</p>
+            <p>prescriptionpsych@tlcpsych.com.ph - General Inquiries, individuals, families and couples.</p>
+            <p>Clinic Hotlines:</p>
+            <p>234-5678</p>
+            <p>876-5432</p>
+            <p>SMS Hotlines:</p>
+            <p>Globe +639787654321</p>
+            <p>Smart +639212345678</p>
+            <p>Notice:</p>
+            <p>Both in-clinic and online sessions are available. Please contact us to learn more.</p>
+            <p>Address:</p>
+            <p>West Aero Park Clark GLobal City</p>
+            <p>Business Hours:</p>
+            <p>8 AM - 9 PM - Monday to Friday</p>
+            <p>8 AM - 5 PM - Saturday</p>
+        </div>
+
+        <div class="container shadow-lg p-3 m-5 bg-light rounded">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.6165033062375!2d120.5716867150449!3d15.179391489435936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396ed78768caadd%3A0x960feca612607c8f!2sWest%20Aeropark!5e0!3m2!1sen!2sph!4v1677297611833!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </body>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/f433770b08.js" crossorigin="anonymous"></script>
+    <script type="module" src="js/main.js"></script>anonymous"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      let typed = new Typed(".auto-type", {
+        strings: ["Visit our Office", "Give Us a Call", "Send Us an Email", "Give a Comment below"],
+        typedSpeed: 250,
+        backSpeed: 250,
+        loop: true,
+      });
+    </script>
+</html>

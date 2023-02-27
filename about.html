@@ -14,8 +14,9 @@
     </style>
     <body>
 
-        <section class="bg-relaxtint text-stimupurehue text-center p-2">
-            <h1>About Us</h1>
+        <section class="bg-dominic-header text-light d-flex flex-column justify-content-center align-items-center pb-5">
+            <h1 class="fw-bold">About Us</h1>
+            <h2>We have a <span class="auto-type"></span></h2>
         </section>
 
         <div class="container shadow-lg p-3 m-5 text-center bg-light rounded">
@@ -196,5 +197,13 @@
     </body>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/f433770b08.js" crossorigin="anonymous"></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      let typed = new Typed(".auto-type", {
+        strings: ["Vision for Quality", "Mission to Serve", "Team of Specialists"],
+        typedSpeed: 250,
+        backSpeed: 250,
+        loop: true,
+      });
+    </script>
 </html>

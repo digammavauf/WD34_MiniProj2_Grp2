@@ -17,7 +17,8 @@ $psychiatry-colors: (
     relaxtint: #DCEDFD,
     dominic-dark: #2b323c8c,
     dominic-light: #EAEAEA,
-    dominic-btn: #285481
+    dominic-btn: #285481,
+    dominic-header: #2b323c
 );
 
 $font-family-sans-serif: "Arial", sans-serif;
@@ -90,4 +91,8 @@ body {
 
 #toggler:checked ~ #togglerLabel span:before {
     content: "\f00d";
+}
+
+.auto-type {
+    color: #84D9EE;
 }

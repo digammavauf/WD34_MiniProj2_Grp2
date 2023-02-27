@@ -123,8 +123,8 @@ export function generateNavBar() {
             let navcon = document.createElement("div");
             navcon.classList.add("d-flex", "justify-content-space-between", "align-items-center", "gap-5");
                 let brand = document.createElement("div");
-                brand.classList.add("fw-normal", "fs-4", "text-uppercase");
-                brand.innerText = "TLC";
+                brand.classList.add("text-uppercase", "bg-dominic-dark", "text-dominic-light", "px-4");
+                brand.innerHTML = `<span class="fs-5 fw-bold">T</span><span class="fs-3 fw-semibold text-relaxtint">L</span><span class="fs-5 fw-bold">C</span>`;
             navcon.appendChild(brand);
                 let tlcnavbar = document.createElement("div");
                 tlcnavbar.classList.add("ms-auto");

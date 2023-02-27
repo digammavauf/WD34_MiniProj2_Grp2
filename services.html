@@ -9,8 +9,9 @@
     </head>
     <body>
 
-        <section class="bg-relaxtint text-stimupurehue text-center p-2">
-            <h1>Services</h1>
+        <section class="bg-dominic-header text-light d-flex flex-column justify-content-center align-items-center pb-5">
+            <h1 class="fw-bold">Services</h1>
+            <h2>We are here to <span class="auto-type"></span></h2>
         </section>
 
         <div class="container my-4">
@@ -21,5 +22,14 @@
     </body>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/f433770b08.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      let typed = new Typed(".auto-type", {
+        strings: ["Help You", "Guide You", "Support You", "Listen to You", "Give Your Answers", "Treat You", "Save You"],
+        typedSpeed: 250,
+        backSpeed: 250,
+        loop: true,
+      });
+    </script>
     <script type="module" src="js/main.js"></script>
 </html>

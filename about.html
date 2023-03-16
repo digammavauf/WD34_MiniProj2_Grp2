@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TLC Online</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/superhero/bootstrap.min.css" integrity="sha384-HnTY+mLT0stQlOwD3wcAzSVAZbrBp141qwfR4WfTqVQKSgmcgzk+oP0ieIyrxiFO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+        <style>
+            .glass {
+                /* From https://css.glass */
+                background: rgba(11, 145, 160, 0.5);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                margin: 1rem;
+            }
+            .transition-in {
+                transition: ease-in 200ms, transform 100ms;
+            }
+            .transition-out {
+                transition: ease-out 200ms, transform 100ms;
+            }
+            .main {
+                padding-top: 100px;
+                /* background-image: url('index.jfif'); */
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark py-lg-0 py-2 fs-5">
+            <nav class="container-fluid">
+                <a class="navbar-brand bg-info mx-auto" style="width:100px; height:80px; overflow:hidden;" href="index.html">
+                    <img src="img/TLC Online-1.png" alt="TLC Logo" style="width:100px; height:100px; margin-top:-20px; margin-left:0;">
+                </a>
+                <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-nav-scroll" style="--bs-scroll-height: 50vh;" id="navbar">
+                    <ul class="navbar-nav me-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="services.html" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="services.html#psychiatry">Psychiatry</a>
+                                <a class="dropdown-item" href="services.html#psychology">Psychology</a>
+                                <a class="dropdown-item" href="services.html#counseling">Counseling</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="booking.html">Book an Appointment</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex justify-content-center align-items-center mt-4 mb-4">
+                        <div id="typed-strings">
+                            <p>Call Us at ^500 <a class="text-warning fw-bold" href="tel:0425428888"><span class="bi bi-telephone mr-1"></span>(042)TLC-8888</a></p>
+                            <p>Email Us at ^500 <a class="text-warning fw-bold" href="mailto:contact@tlconline.ph"><span class="bi bi-envelope mr-1"></span>contact@tlconline.ph</a></p>
+                            <p>Give Us a ^500 <a class="text-warning fw-bold" href="contact.html#comment"><span class="bi bi-pencil mr-1"></span>Comment</a></p>
+                        </div>
+                        <div class="text-info text-center border-start border-end rounded-start rounded-end px-2 fs-5">
+                            <span id="typed"></span>
+                        </div>
+                        <div class="input-group d-none">
+                            <input class="form-control me-sm-2" type="search" id="search" placeholder="Type keyword here" aria-label="Type your search keyword here" aria-describedby="button-search">
+                            <button class="btn btn-secondary my-2 my-sm-0 text-nowrap" type="submit" id="button-search">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <main id="main" class="container main box-shadow d-flex flex-column gap-4 mb-4">
+            <div class="glass text-warning p-4 rounded-start rounded-end text-center">
+                <h1>About TLC Online</h1>
+                <p>TLC is an online portal for both mental health patients and mental health specialists.</p>
+                <p>We provide resources, information, and support to people who are struggling with mental health issues. We offer a wide range of services, including online counseling, peer support forums, self-help tools, educational resources, and access to mental health professionals.</p>
+                <p>TLC a shorthand way of referring to “Tender Loving Care” used particularly in informal or personal contexts. It is a phrase is often used to describe the compassionate and attentive care given to someone or something that is in need of special attention, such as a sick or injured person, a child, a pet, or a valuable possession – in this instance, MENTAL HEALTH.</p>
+            </div>            
+            <div class="bg-light text-black p-4 border rounded-start rounded-end text-center">
+                <h1>Mission & Vision Statement</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo impedit ipsam cumque debitis dolores distinctio architecto temporibus voluptatum, voluptatem odit esse delectus? Maiores soluta tenetur distinctio error expedita molestias tempore!</p>    
+            </div>
+            <div class="bg-light text-black p-4 border rounded-start rounded-end text-center">
+                <h1>Our Volunteers and Professionals</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto qui sequi tempore tenetur, dolor, omnis officiis debitis perferendis non velit dicta quia, nostrum repellendus eligendi recusandae facere soluta vitae vero.</p>
+                <a class="btn btn-warning fs-1 fw-bold rounded-start rounded-end" href="join.html">Join Our Team</a>
+                <div class="d-flex flex-row flex-wrap justify-content-center align-items-space-between gap-2 mt-4">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/dca89d519abf9e373d93ed562a521ca4.jpg?v=966d54b722cb" alt="Victoria" title="Victoria">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/f1424e37acbaac10619a7fe7c38adda5.jpg?v=966d54b722cb" alt="Karen" title="Karen">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/441eda74e746df3b50d37219891ccb4a.jpg?v=966d54b722cb" alt="Matt" title="Matt">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/b4bad3ce6ac40c8024a839b7c105de28.jpg?v=966d54b722cb" alt="Emma" title="Emma">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/0db4dae3eadbb824e1a72401ec594c1f.jpg?v=966d54b722cb" alt="Gerlie" title="Gerlie">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/3f81debbb3fb9dc4a642b789af656133.jpg?v=966d54b722cb" alt="Simon" title="Simon">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/8c6830bb46988faf7ffe0d8facea38e4.jpg?v=966d54b722cb" alt="Louis" title="Louis">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/df3d39b9e9ebd303bb6e5dbd0901f6ad.jpg?v=966d54b722cb" alt="Brad" title="Brad">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/cfcc4a387b2f8e1719a1d912f327a1ed.jpg?v=966d54b722cb" alt="Jen" title="Jen">
+                    <img src="https://dy7glz37jgl0b.cloudfront.net/about/counselors/1c641d91c16ef3f4dd479a7a8f1fbe83.jpg?v=966d54b722cb" alt="Nicole" title="Nicole">
+                </div>
+            </div>
+            <div class="bg-light text-black p-4 border rounded-start rounded-end text-center">
+                <h1>Success Stories</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima quibusdam consequatur repellendus voluptatibus doloremque veritatis ipsa minus maxime dolorem eum impedit, voluptas nam provident aliquam esse ipsam sit suscipit!</p>    
+                <div class="d-flex flex-row flex-wrap gap-2 justify-content-around align-items-stretch">
+                    <div class="card col-12 col-lg-3 text-black glass rounded-start rounded-end">
+                        <img class="rounded-circle mt-4" src="https://dy7glz37jgl0b.cloudfront.net/about/ghita-success.jpg?v=966d54b722cb" alt="Alex" title="Alex">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, obcaecati. Magni placeat non cum pariatur atque molestias incidunt saepe earum, ad in ipsam quasi dolorem vitae ipsa aut cumque odio.</p>
+                        </div>                        
+                    </div>
+                    <div class="card col-12 col-lg-3 text-black glass rounded-start rounded-end">
+                        <img class="rounded-circle mt-4" src="https://dy7glz37jgl0b.cloudfront.net/about/ryan-success.jpg?v=966d54b722cb" alt="John" title="John">
+                        <div class="card-body">
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia quasi optio, distinctio at ducimus fuga ipsam quae voluptates deserunt sed, quas voluptas impedit dolor fugiat ut vel magni placeat error!</p>
+                        </div>                        
+                    </div>
+                    <div class="card col-12 col-lg-3 text-black glass rounded-start rounded-end">
+                        <img class="rounded-circle mt-4" src="https://dy7glz37jgl0b.cloudfront.net/about/laura-success.jpg?v=966d54b722cb" alt="Elmer" title="Elmer">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam accusamus aspernatur reprehenderit atque dignissimos accusantium molestiae odit consequatur sunt sequi quia voluptatibus quibusdam ipsam deleniti animi, at minus.</p>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light text-black p-4 border rounded-start rounded-end text-center">
+                <h1>Web Developers</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, amet mollitia officia exercitationem illo quod corporis fugiat magni cupiditate veniam natus quis, at corrupti dolor laudantium aperiam? Vitae, dolorum maiores?</p>    
+                <div class="row">
+                    <div class="col-md-3 col-lg-4 col-12 mx-auto mb-4">
+                        <div class="card h-100">
+                            <img src="img/Tena-2.jpg" alt="profile" class="card-image-top rounded-circle m-5">
+                            <div class="card-header">
+                                <h3 class="card-title">John Philip Tena</h3>
+                                <h5 class="card-subtitle text-muted">Structure</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Also known as DigammaVauF and Philip to his colleagues. Currently attending KodeGo Web Development Bootcamp under Batch WD34 partime.</p>
+                            </div>
+                            <div class="card-footer fs-3">
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.instagram.com/digammavauf"><i class="bi bi-facebook"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.instagram.com/digammavauf"><i class="bi bi-instagram"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://twitter.com/digammavauf"><i class="bi bi-twitter"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.linkedin.com/in/digammavauf"><i class="bi bi-linkedin"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.linkedin.com/company/digammavauf"><i class="bi bi-linkedin"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.youtube.com/@juanpilipolacidar"><i class="bi bi-youtube"></i></a>                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-12 mx-auto mb-4">
+                        <div class="card h-100">
+                            <img src="img/Lapuz.jpg" alt="profile" class="card-image-top rounded-circle m-5">
+                            <div class="card-header">
+                                <h3 class="card-title">Paul Benedict Lapuz</h3>
+                                <h5 class="card-subtitle text-muted">Content</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Also known as Kaniel Outis and Paulsie to his colleagues. Currently attending KodeGo Web Development Bootcamp under Batch WD34 partime.</p>
+                            </div>
+                            <div class="card-footer fs-3">
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.facebook.com/LapuzPaul"><i class="bi bi-facebook"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.instagram.com/paulblapuz"><i class="bi bi-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-12 mx-auto mb-4">
+                        <div class="card h-100">
+                            <img src="img/Castro.jpg" alt="profile" class="card-image-top rounded-circle m-5">
+                            <div class="card-header">
+                                <h3 class="card-title">Dominic Castro</h3>
+                                <h5 class="card-subtitle text-muted">UI Design</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Also known as Castro and Sky to his colleagues. Currently attending KodeGo Web Development Bootcamp under Batch WD34 partime.</p>
+                            </div>
+                            <div class="card-footer fs-3">
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.facebook.com/Skyyy.Dominic"><i class="bi bi-facebook"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.instagram.com/_skhyzz"><i class="bi bi-instagram"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://twitter.com/_Dominic_Castro"><i class="bi bi-twitter"></i></a>
+                                <a class="text-decoration-none link-info pe-auto" href="https://www.youtube.com/Sky%20Dominic"><i class="bi bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="border-top bg-secondary mt-auto py-4">
+            <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-center footer-container mx-xl-auto">
+                <div class="d-flex align-items-center footer-logo mb-2 mb-lg-0">
+                    <a class="navbar-brand mx-auto" style="width:120px; height:60px; overflow:hidden;" href="index.html">
+                        <img src="img/TLC Online-1.png" alt="TLC Logo" style="width:150px; height:150px; margin-top:-45px; margin-left:-15px;">
+                    </a>
+                </div>
+                <div class="d-flex justify-items-center align-items-center flex-column flex-lg-row mr-lg-auto mb-2 mb-lg-0">
+                    <div class="text-center text-lg-left mx-2">
+                        <p>Find your path to healing</p>
+                        <p>with our online counceling services</p>
+                        <a class="btn btn-info" href="booking.html">Get Started</a>
+                    </div>
+                    <div class="text-center text-lg-left mx-2">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Home
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="services.html">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-2 mb-lg-0 about-policy">
+                    <a class="mr-4 text-decoration-none link-info pe-auto" href="#" rel="noopener" target="_blank">
+                        <span class="bi bi-facebook fs-1"></span>
+                    </a>
+                    <a class="mr-4 text-decoration-none link-info pe-auto" href="#" rel="noopener" target="_blank">
+                        <span class="bi bi-twitter fs-1"></span>
+                    </a>
+                    <a class="text-decoration-none link-info pe-auto" href="#" rel="noopener" target="_blank">
+                        <span class="bi bi-linkedin fs-1"></span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("nav").classList.add("glass", "transition-in");
+            document.getElementById("nav").classList.remove("bg-dark");
+          } else {
+            document.getElementById("nav").classList.remove("glass");
+            document.getElementById("nav").classList.add("bg-dark", "transition-out");
+          }
+        }
+    </script>
+    <script>var typed = new Typed('#typed', { stringsElement: '#typed-strings', smartBackspace: true, cursorChar: '_', loop: true, backDelay: 4000 });</script>
+</html>

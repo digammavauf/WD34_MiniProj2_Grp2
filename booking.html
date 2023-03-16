@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TLC Online</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/superhero/bootstrap.min.css" integrity="sha384-HnTY+mLT0stQlOwD3wcAzSVAZbrBp141qwfR4WfTqVQKSgmcgzk+oP0ieIyrxiFO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+        <style>
+            .glass {
+                /* From https://css.glass */
+                background: rgba(11, 145, 160, 0.5);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                margin: 1rem;
+            }
+            .transition-in {
+                transition: ease-in 200ms, transform 100ms;
+            }
+            .transition-out {
+                transition: ease-out 200ms, transform 100ms;
+            }
+            .main {
+                padding-top: 100px;
+                /* background-image: url('index.jfif'); */
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark py-lg-0 py-2 fs-5">
+            <nav class="container-fluid">
+                <a class="navbar-brand bg-info mx-auto" style="width:100px; height:80px; overflow:hidden;" href="index.html">
+                    <img src="img/TLC Online-1.png" alt="TLC Logo" style="width:100px; height:100px; margin-top:-20px; margin-left:0;">
+                </a>
+                <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-nav-scroll" style="--bs-scroll-height: 50vh;" id="navbar">
+                    <ul class="navbar-nav me-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="services.html" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="services.html#psychiatry">Psychiatry</a>
+                                <a class="dropdown-item" href="services.html#psychology">Psychology</a>
+                                <a class="dropdown-item" href="services.html#counseling">Counseling</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item active" href="booking.html">Book an Appointment
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex justify-content-center align-items-center mt-4 mb-4">
+                        <div id="typed-strings">
+                            <p>Call Us at ^500 <a class="text-warning fw-bold" href="tel:0425428888"><span class="bi bi-telephone mr-1"></span>(042)TLC-8888</a></p>
+                            <p>Email Us at ^500 <a class="text-warning fw-bold" href="mailto:contact@tlconline.ph"><span class="bi bi-envelope mr-1"></span>contact@tlconline.ph</a></p>
+                            <p>Give Us a ^500 <a class="text-warning fw-bold" href="contact.html#comment"><span class="bi bi-pencil mr-1"></span>Comment</a></p>
+                        </div>
+                        <div class="text-info text-center border-start border-end rounded-start rounded-end px-2 fs-5">
+                            <span id="typed"></span>
+                        </div>
+                        <div class="input-group d-none">
+                            <input class="form-control me-sm-2" type="search" id="search" placeholder="Type keyword here" aria-label="Type your search keyword here" aria-describedby="button-search">
+                            <button class="btn btn-secondary my-2 my-sm-0 text-nowrap" type="submit" id="button-search">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <main id="main" class="container main box-shadow mb-4">
+            <div class="col-10">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="tabService" data-bs-toggle="tab" href="#service-selection" aria-selected="true" role="tab">Service</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tabSchedule" data-bs-toggle="tab" href="#shedule-selection" aria-selected="false" role="tab" tabindex="-1">Schedule</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tabPayment" data-bs-toggle="tab" href="#payment-selection" aria-selected="false" role="tab" tabindex="-1">Payment</a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active show" id="service-selection" role="tabpanel">
+                        <form>
+                            <fieldset class="form-group">
+                                <legend class="mt-4">Select a service you want to avail</legend>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions1" value="option1">
+                                <label class="form-check-label" for="serviceOptions1">
+                                    Psychiatry Initial Session (&#x20B1; 2489)
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions2" value="option2" disabled>
+                                <label class="form-check-label" for="serviceOptions2">
+                                    Psychiatry Follow Up Session (&#x20B1; 2489) [Fully booked]
+                                </label>
+                                </div>
+                                <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions3" value="option3">
+                                <label class="form-check-label" for="serviceOptions3">
+                                    Psychology Initial Session  (&#x20B1; 2449)
+                                </label>
+                                </div>
+                                <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions4" value="option4" disabled>
+                                <label class="form-check-label" for="serviceOptions4">
+                                    Psychology Follow Up Session  (&#x20B1; 1989) [Fully booked]
+                                </label>
+                                </div>
+                                <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions5" value="option5">
+                                <label class="form-check-label" for="serviceOptions5">
+                                    Psychology Follow Up Session  (&#x20B1; 8989)
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions6" value="option6">
+                                    <label class="form-check-label" for="serviceOptions6">
+                                        Couples Counseling Followup Session (&#x20B1; 2989)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="serviceOptions" id="serviceOptions7" value="option7">
+                                    <label class="form-check-label" for="serviceOptions7">
+                                        Couples Counseling Initial Session (&#x20B1; 8989)
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div class="form-group">
+                                <label for="concern" class="form-label mt-4">Describe your concern (optional)</label>
+                                <textarea class="form-control" id="concern" rows="3"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-info" id="next-schedule">Continue with Schedule</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="shedule-selection" role="tabpanel">
+                        <form>
+                            <fieldset class="form-group">
+                                <legend class="mt-4">Select a schedule you prefer</legend>
+                            </fieldset>
+                            <button type="button" class="btn btn-warning" id="prev-service">Back to Services</button>
+                            <button type="button" class="btn btn-info" id="next-payment">Continue with Payment</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="payment-selection" role="tabpanel">
+                        <form>
+                            <fieldset class="form-group">
+                                <legend class="mt-4">Select a payment method</legend>
+                            </fieldset>
+                            <button type="button" class="btn btn-warning" id="prev-schedule">Back to Schedule</button>
+                            <button type="button" class="btn btn-info" id="next-booking">Finalize Booking</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="border-top bg-secondary mt-auto py-4">
+            <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-center footer-container mx-xl-auto">
+                <div class="d-flex align-items-center footer-logo mb-2 mb-lg-0">
+                    <a class="navbar-brand mx-auto" style="width:120px; height:60px; overflow:hidden;" href="index.html">
+                        <img src="img/TLC Online-1.png" alt="TLC Logo" style="width:150px; height:150px; margin-top:-45px; margin-left:-15px;">
+                    </a>
+                </div>
+                <div class="d-flex justify-items-center align-items-center flex-column flex-lg-row mr-lg-auto mb-2 mb-lg-0">
+                    <div class="text-center text-lg-left mx-2">
+                        <p>Find your path to healing</p>
+                        <p>with our online counceling services</p>
+                        <a class="btn btn-info" href="booking.html">Get Started</a>
+                    </div>
+                    <div class="text-center text-lg-left mx-2">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="services.html">Services
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-2 mb-lg-0 about-policy">
+                    <a class="mr-4 text-decoration-none link-info pe-auto" href="#" rel="noopener" target="_blank">
+                        <span class="bi bi-facebook fs-1"></span>
+                    </a>
+                    <a class="mr-4 text-decoration-none link-info pe-auto" href="#" rel="noopener" target="_blank">
+                        <span class="bi bi-twitter fs-1"></span>
+                    </a>
+                    <a class="text-decoration-none link-info pe-auto" href="#" rel="noopener" target="_blank">
+                        <span class="bi bi-linkedin fs-1"></span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("nav").classList.add("glass", "transition-in");
+            document.getElementById("nav").classList.remove("bg-dark");
+          } else {
+            document.getElementById("nav").classList.remove("glass");
+            document.getElementById("nav").classList.add("bg-dark", "transition-out");
+          }
+        }
+
+        document.getElementById("next-schedule").addEventListener("click", function(event) {
+            let serviceOptions = document.getElementsByName("serviceOptions");
+            let service;
+            for(let serviceOption of serviceOptions) {
+                if(serviceOption.checked) {
+                    service = serviceOption.nextElementSibling.innerText;
+                }
+            }
+            if(service ==null || service == "") return alert("Please select a service.");
+            let concern = document.getElementById("concern").value;
+            if(concern == "") if(!confirm("You are about to continue with an empty conern. Cancel to fillout or OK to continue.")) return;
+            sessionStorage.setItem("service", service);
+            sessionStorage.setItem("concern", concern);
+            let tabSchedule = document.getElementById("tabSchedule");
+            let clickEvent = new Event("click");
+            tabSchedule.dispatchEvent(clickEvent);        
+        });
+
+        document.getElementById("prev-service").addEventListener("click", function(event) {
+            let tabService = document.getElementById("tabService");
+            let clickEvent = new Event("click");
+            tabService.dispatchEvent(clickEvent);
+        });
+
+        document.getElementById("next-payment").addEventListener("click", function(event) {
+            let tabPayment = document.getElementById("tabPayment");
+            let clickEvent = new Event("click");
+            tabPayment.dispatchEvent(clickEvent);
+        });
+
+        document.getElementById("prev-schedule").addEventListener("click", function(event) {
+            let tabPayment = document.getElementById("tabSchedule");
+            let clickEvent = new Event("click");
+            tabPayment.dispatchEvent(clickEvent);
+        });
+        
+        document.getElementById("next-booking").addEventListener("click", function(event) {
+            alert("Your prefered service schedule has been booked successfuly.\n\nAn email will be sent to you for further details.");
+            let tabService = document.getElementById("tabService");
+            let clickEvent = new Event("click");
+            tabService.dispatchEvent(clickEvent);
+        });
+
+    </script>
+    <script>var typed = new Typed('#typed', { stringsElement: '#typed-strings', smartBackspace: true, cursorChar: '_', loop: true, backDelay: 4000 });</script>
+</html>
